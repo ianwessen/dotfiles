@@ -1,0 +1,22 @@
+#!/bin/bash
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
+}
+
+# Old prompts for reference:
+# export PS1="\[\e[90m\D{%H:%M:%S}\] \[\033[32m\W\]\[\033[94m\$(parse_git_branch)\]\[\033[00m\] \[\e[0m🚀 \]"
+# export PS1="\D{%H:%M:%S} \[${GREEN}\]\W\[${BLUE}\]\$(parse_git_branch)\[$ENDCOLOR\] $ "
+
+underlineStart=$(tput smul);
+underlineEnd=$(tput rmul);
+GREEN=$(tput setaf 2)
+BLUE=$(tput setaf 4)
+WHITE=$(tput setaf 7)
+DARKGRAY="\e[90m"
+ENDCOLOR="\e[0m"
+
+export PS1="\[$DARKGRAY\]\D{%H:%M:%S} \[${GREEN}\]\W\[$ENDCOLOR\] $ "
+
+# Set iTerm tab title to the working directory
+export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
