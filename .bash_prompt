@@ -1,22 +1,31 @@
 #!/bin/bash
 
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
-}
-
-# Old prompts for reference:
-# export PS1="\[\e[90m\D{%H:%M:%S}\] \[\033[32m\W\]\[\033[94m\$(parse_git_branch)\]\[\033[00m\] \[\e[0m🚀 \]"
-# export PS1="\D{%H:%M:%S} \[${GREEN}\]\W\[${BLUE}\]\$(parse_git_branch)\[$ENDCOLOR\] $ "
-
 underlineStart=$(tput smul);
 underlineEnd=$(tput rmul);
-GREEN=$(tput setaf 2)
-BLUE=$(tput setaf 4)
-WHITE=$(tput setaf 7)
+
+BLACK="\e[30m"
+GREEN="\e[32m"
+BLUE="\e[34m"
+
 DARKGRAY="\e[90m"
+LIGHTGREEN="\e[92m"
+LIGHTBLUE="\e[94m"
+LIGHTCYAN="\e[96m"
+
+GREEN_BKG="\e[42m"
+BLUE_BKG="\e[44m"
+LIGHTGRAY_BKG="\e[47m"
+DARKGRAY_BKG="\e[100m"
+LIGHTBLUE_BKG="\e[104m"
+
 ENDCOLOR="\e[0m"
 
-export PS1="\[$DARKGRAY\]\D{%H:%M:%S} \[${GREEN}\]\W\[$ENDCOLOR\] $ "
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' | tail -c 12
+}
+
+# HH:MM:SS WorkingDirectory [git_branch] $
+export PS1="\[$DARKGRAY\]\D{%H:%M:%S} \[${GREEN}\]\W \[${LIGHTBLUE_BKG}\]\[${BLACK}\]\$(parse_git_branch)\[$ENDCOLOR\] $ "
 
 # Set iTerm tab title to the working directory
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
