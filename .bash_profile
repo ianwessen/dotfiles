@@ -11,10 +11,5 @@
 # source ~/.dotfiles/.bash_utilities
 # source ~/.dotfiles/.bash_aliases
 # source ~/.dotfiles/.bash_prompt
-
-# Set iTerm tab title to the working directory
-export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
-
-# Directory colors
-export CLICOLOR=2
-export LSCOLORS=GxFxCxDxBxegedabagaced
+# source ~/.dotfiles/.bash_exports
+# source ~/.dotfiles/.bash_private
