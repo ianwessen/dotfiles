@@ -1,4 +1,6 @@
 #!/bin/bash
+# ------------------------------
+#  Bash prompy
 
 underlineStart=$(tput smul);
 underlineEnd=$(tput rmul);
@@ -26,6 +28,3 @@ parse_git_branch() {
 
 # HH:MM:SS WorkingDirectory [git_branch] $
 export PS1="\[$DARKGRAY\]\D{%H:%M:%S} \[$GREEN\]\W \[$LIGHTBLUE\]\$(parse_git_branch)\[$ENDCOLOR\]$ "
-
-# Set iTerm tab title to the working directory
-export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
