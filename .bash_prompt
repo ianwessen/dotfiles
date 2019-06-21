@@ -27,4 +27,4 @@ parse_git_branch() {
 }
 
 # HH:MM:SS WorkingDirectory [git_branch] $
-export PS1="\[$DARKGRAY\]\D{%H:%M:%S} \[$GREEN\]\W \[$LIGHTBLUE\]\$(parse_git_branch)\[$ENDCOLOR\]$ "
+export PS1="\[$DARKGRAY\]\D{%H:%M:%S} \[$GREEN\]\W \[$LIGHTBLUE\]\$(parse_git_branch)\[$ENDCOLOR\]🚀 "
