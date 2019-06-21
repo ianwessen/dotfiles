@@ -5,7 +5,10 @@
 export EDITOR='subl'
 
 # For scriptin' fun
-export PATH="$HOME/bin:$PATH"
+# set PATH so it includes private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
 
 # Bash colors
 export TERM=xterm-color
