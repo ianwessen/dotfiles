@@ -47,3 +47,5 @@ alias rain="open -a 'quicktime player' ~/Dropbox/Music/trimmedrain.m4a"
 # Cash Rules Everything Around Me
 # (Bloomberg Global Financial Livestream)
 alias bloomberg="open -a Google\ Chrome https://www.youtube.com/watch?v=Ga3maNZ0x0w"
+
+alias hbserver="unicorn_rails -l 0.0.0.0:8000 -E development -c config/unicorn.rb"
