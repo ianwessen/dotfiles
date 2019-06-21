@@ -1,6 +1,6 @@
 #!/bin/bash
 # ------------------------------
-#  Bash prompy
+#  Bash prompt
 
 underlineStart=$(tput smul);
 underlineEnd=$(tput rmul);
