@@ -1,11 +1,11 @@
 # My dotfiles
 
-Clone this in the home directory, name it `.dotfiles`. 
+Clone this in the home directory, name it `dotfiles`. 
 
-In the `.bash_profile`, you'll need to import the pieces:
+We use `Powerlevel10k` ([GitHub](https://github.com/romkatv/powerlevel10k)) to style the prompt.
+
+In `.zshrc`, you'll need to import the index file:
 
 ```bash
-. $HOME/.dotfiles/.bash_aliases
-. $HOME/.dotfiles/.bash_prompt
-# and so on...
+. $HOME/dotfiles/.index
 ```

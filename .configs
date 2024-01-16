@@ -1,0 +1,10 @@
+#!/bin/bash
+# ------------------------------
+
+export EDITOR='vim'
+
+# For scriptin' fun
+# set PATH so it includes private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
