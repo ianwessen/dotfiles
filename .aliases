@@ -1,4 +1,4 @@
-#!/bin/bash
+
 # ------------------------------
 #  Personal Aliases
 
@@ -11,7 +11,7 @@ alias lsd='ls -l ${colorflag} | grep "^d"'
 # Edit files with IDE of choice
 alias edit='subl'
 
-alias reload="source ~/.bash_profile"
+alias reload="source ~/.zshrc"
 
 # Open current directory in finder
 alias finder="open ."
@@ -33,17 +33,16 @@ alias now='date +"%Y %b %d, %r"'
 alias shutup="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 
-# Save GH password
-alias sshgit="ssh-add ~/.ssh/id_rsa &>/dev/null"
-
 # Current git branch
 alias branch="git rev-parse --abbrev-ref HEAD"
 
-alias copypub="pbcopy < ~/.ssh/id_rsa.pub"
-
 # Make it rain
-alias rain="open -a 'quicktime player' ~/Dropbox/Music/trimmedrain.m4a"
+alias rain="open -a 'music' ~/Music/trimmedrain.m4a"
 
-# Cash Rules Everything Around Me
-# (Bloomberg Global Financial Livestream)
-alias bloomberg="open -a Google\ Chrome https://www.youtube.com/watch?v=Ga3maNZ0x0w"
+# Kubernetes
+alias k='kubectl'
+alias kg='kubectl get'
+alias kgp='kubectl get pods'
+alias kdp='kubectl describe pods'
+
+alias lg='lazygit'

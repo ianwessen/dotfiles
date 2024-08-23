@@ -1,0 +1,14 @@
+#!/bin/bash
+# ------------------------------
+
+export EDITOR='vim'
+
+# set PATH so it includes private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+eval "$(pyenv init --path --no-rehash)"
+
+# This produces a really annoying output that I am intentionally suppressing
+tsh login --proxy=teleport.management.carta.rocks > /dev/null

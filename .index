@@ -1,0 +1,7 @@
+#!/bin/bash
+# ------------------------------
+
+source ~/dotfiles/.aliases
+source ~/dotfiles/.private
+source ~/dotfiles/.utilities
+source ~/dotfiles/.configs
