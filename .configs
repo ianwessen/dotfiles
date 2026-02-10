@@ -1,14 +1,51 @@
 #!/bin/bash
 # ------------------------------
 
-export EDITOR='vim'
+# Editor
+export EDITOR='nvim'
 
-# set PATH so it includes private bin if it exists
+# Theming
+export BAT_THEME="Coldark-Dark"
+export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --border --margin=1 --padding=1"
+
+# PATH additions
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/Users/ian.wessen/.codeium/windsurf/bin:$PATH"
 
+# Kubernetes
+export KUBECONFIG=$HOME/.kube/config:$HOME/.kube/banyan
+
+# Github autocomplete script
+# Dependency script:
+# curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
+
+# Tool initializations
 eval "$(pyenv init --path --no-rehash)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+eval $(thefuck --alias)
 
-# This produces a really annoying output that I am intentionally suppressing
-tsh login --proxy=teleport.management.carta.rocks > /dev/null
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Deno
+. "/Users/ian.wessen/.deno/env"
+
+# GHCup
+[ -f "/Users/ian.wessen/.ghcup/env" ] && . "/Users/ian.wessen/.ghcup/env"
+
+# Fund Admin
+source ~/Projects/fund-admin/.dev/fa-fn.sh
+source ~/Projects/fund-admin/.dev/aliases.sh

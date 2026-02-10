@@ -1,5 +1,6 @@
-
+#!/bin/bash
 # ------------------------------
+
 #  Personal Aliases
 
 # List everything
@@ -9,7 +10,8 @@ alias ll='ls -al . --color=auto'
 alias lsd='ls -l ${colorflag} | grep "^d"'
 
 # Edit files with IDE of choice
-alias edit='subl'
+alias edit='nvim'
+alias vim='nvim'
 
 alias reload="source ~/.zshrc"
 
@@ -44,5 +46,7 @@ alias k='kubectl'
 alias kg='kubectl get'
 alias kgp='kubectl get pods'
 alias kdp='kubectl describe pods'
+
+alias tlogin='tsh login --proxy=teleport.management.carta.rocks > /dev/null'
 
 alias lg='lazygit'
